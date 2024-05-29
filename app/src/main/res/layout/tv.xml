@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="key" type="String"/>
+        <variable name="todo" type="com.crud.TODOData"/>
+        <variable name="activity" type="com.crud.MainActivity" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:padding="10dp"
+            android:text="@{todo.text}"
+            android:textAlignment="viewStart"
+            android:textSize="30sp"
+            android:textStyle="normal"
+
+            android:layout_toStartOf="@id/ll" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:layout_gravity="end"
+        >
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/baseline_edit_24"
+            android:scaleType="fitCenter"
+            android:onClick="@{() -> activity.onEdit(key)}"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:importantForAccessibility="no"
+            android:background="@drawable/baseline_delete_forever_24"
+            android:onClick="@{() -> activity.onDelete(key)}"
+            style="?android:attr/buttonBarButtonStyle" />
+    </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <Button android:id="@+id/back" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/back" android:onClick="onBack" android:layout_alignParentStart="true" >
+        </Button>
+            <Button android:onClick="save" android:id="@+id/save" android:layout_alignParentEnd="true" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Save" >
+            </Button>
+        </RelativeLayout>
+        <EditText
+        android:id="@+id/todo"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="top"
+            android:overScrollMode="ifContentScrolls"
+            android:scrollbars="vertical"
+        android:ems="10"
+        android:hint="Your todo"
+        android:inputType="textMultiLine"
+        />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
